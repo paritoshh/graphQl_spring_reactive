@@ -1,0 +1,13 @@
+CREATE TABLE books(
+  id VARCHAR(225) PRIMARY KEY,
+  name VARCHAR(225),
+  pages INT,
+  category VARCHAR(225)
+);
+
+CREATE TABLE authors(
+id VARCHAR(225) PRIMARY KEY,
+name VARCHAR(225),
+age INT,
+book_id VARCHAR(225) UNIQUE NOT NULL,
+CONSTRAINT book_author_fk FOREIGN KEY(book_id) REFERENCES books(id));
